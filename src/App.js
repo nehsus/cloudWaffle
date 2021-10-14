@@ -4,10 +4,10 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import MainLayout from './layout/MainLayout';
 
 // Lazy imports for Pages
-const Post = React.lazy(() => import('./pages/posts/Post'));
-const Posts = React.lazy(() => import('./pages/posts/Posts'));
-const Home = React.lazy(() => import('./pages/home/Home'));
-const Adder = React.lazy(() => import('./pages/posts/Adder'));
+const Post = React.lazy(() => import('./pages/posts/post'));
+const Posts = React.lazy(() => import('./pages/posts/posts'));
+const Home = React.lazy(() => import('./pages/home/home'));
+const Adder = React.lazy(() => import('./pages/posts/adder'));
 /**
  * Main App Component. Specifies routes for components
  * 
