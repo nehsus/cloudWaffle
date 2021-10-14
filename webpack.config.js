@@ -62,8 +62,9 @@ let config = {
   },
   plugins: [
     new HtmlWebPackPlugin({
-      template: path.resolve('./index.html'),
-      template: path.resolve('./favicon.png'),
+      minify: false,
+      template: './index.html',
+      template: './favicon.png',
     }),
   ],
 };
@@ -87,7 +88,7 @@ module.exports = (env, argv) => {
   }
 
   if (argv.mode === 'production') {
-    config.entry = ['./src'];
+    config.entry = ['./src/index.js'];
     config.devtool = 'source-map';
     config.output.filename = '[name].[chunkhash].bundle.js';
     config.output.chunkFilename = '[name].[chunkhash].bundle.js';
@@ -114,6 +115,7 @@ module.exports = (env, argv) => {
     };
     config.plugins.push(
       new HtmlWebpackPlugin({
+      minify: false,
       template: path.resolve('./index.html'),
     }),
       new BundleAnalyzerPlugin({
