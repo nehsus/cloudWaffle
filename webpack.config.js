@@ -9,7 +9,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 let config = {
   output: {
-    path: './build',
+    path: path.resolve(__dirname, 'build'),
     publicPath: '/',
     filename: 'bundle.js',
   },
@@ -115,7 +115,7 @@ module.exports = (env, argv) => {
     config.plugins.push(
       new HtmlWebpackPlugin({
       template: path.resolve('./index.html'),
-    })
+    }),
       new BundleAnalyzerPlugin({
         analyzerMode: 'static',
       }),
