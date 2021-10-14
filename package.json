@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": "scripts" {
+  "scripts": {
     "start": "webpack-dev-server --port 8080 --open --mode=development --display-error-details",
     "clean-build": "shx rm -rf build",
     "clean": "rimraf dist",
