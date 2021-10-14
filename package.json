@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --port 8080 --open --mode=development --display-error-details",
+    "start": "webpack-dev-server --mode development --display-error-details",
     "clean-build": "shx rm -rf build",
     "clean": "rimraf dist",
     "build": "NODE_ENV=production npm run clean && webpack -p",

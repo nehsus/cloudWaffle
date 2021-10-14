@@ -5,10 +5,11 @@ const webpack = require('webpack');
 const CompressionPlugin = require('compression-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const { jsonBeautify } = require('beautify-json');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 let config = {
   output: {
-    path: path.resolve(__dirname, 'build'),
+    path: './build',
     publicPath: '/',
     filename: 'bundle.js',
   },
@@ -61,8 +62,8 @@ let config = {
   },
   plugins: [
     new HtmlWebPackPlugin({
-      template: './index.html',
-      favicon: './favicon.png',
+      template: path.resolve('./index.html'),
+      template: path.resolve('./favicon.png'),
     }),
   ],
 };
@@ -75,7 +76,7 @@ module.exports = (env, argv) => {
     config.resolve.alias['react-dom'] = '@hot-loader/react-dom';
     config.plugins.push(new webpack.HotModuleReplacementPlugin());
     config.devServer = {
-      contentBase: path.join(__dirname, 'dist'),
+      contentBase: './build',
       compress: true,
       open: true,
       port: 3000,
@@ -112,6 +113,9 @@ module.exports = (env, argv) => {
       },
     };
     config.plugins.push(
+      new HtmlWebpackPlugin({
+      template: path.resolve('./index.html'),
+    })
       new BundleAnalyzerPlugin({
         analyzerMode: 'static',
       }),
