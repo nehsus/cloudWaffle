@@ -6,7 +6,7 @@ import MainLayout from './layout/MainLayout';
 // Lazy imports for Pages
 const Post = React.lazy(() => import('./pages/posts/post'));
 const Posts = React.lazy(() => import('./pages/posts/posts'));
-const Home = React.lazy(() => import('./pages/home/home'));
+const Home = React.lazy(() => import('./pages/posts/home'));
 const Adder = React.lazy(() => import('./pages/posts/adder'));
 /**
  * Main App Component. Specifies routes for components
