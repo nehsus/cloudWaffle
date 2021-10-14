@@ -75,11 +75,14 @@ module.exports = (env, argv) => {
     config.resolve.alias['react-dom'] = '@hot-loader/react-dom';
     config.plugins.push(new webpack.HotModuleReplacementPlugin());
     config.devServer = {
+      contentBase: path.join(__dirname, 'dist'),
       compress: true,
+      open: true,
+      port: 3000,
+      historyApiFallback: true,
       hot: true,
-      contentBase: './build',
-      historyApiFallback: true, //For react router
-    };
+      publicPath: '/',
+    }
   }
 
   if (argv.mode === 'production') {

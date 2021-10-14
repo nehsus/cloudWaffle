@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  "scripts": "scripts" {
+    "start": "webpack-dev-server --port 8080 --open --mode=development --display-error-details",
+    "clean-build": "shx rm -rf build",
+    "clean": "rimraf dist",
+    "build": "NODE_ENV=production npm run clean && webpack -p",
+    "build-serve": "npm run build && serve",
+    "watch": "webpack -w"
   },
   "node_engine": {
     "node": ">=10.16.0"
