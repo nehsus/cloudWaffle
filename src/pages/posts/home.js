@@ -20,7 +20,7 @@ const Home = ({ location: { pathname } }) => {
         Reach out to me at su@sushen.dev for more information :)
       </p>
 
-      <ps>PS: please hire me</ps>
+      <ps>PS: I'm looking for full-time opportunities from June '22, please reach out!</ps>
     </PageLayout>
   );
 };
